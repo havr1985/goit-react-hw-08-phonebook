@@ -5,7 +5,8 @@ import { App } from 'components/App';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from 'components/GlobalStyle';
 import { Provider } from 'react-redux';
-import { store } from 'redux/store';
+import { persistor, store } from 'redux/store';
+import { PersistGate } from 'redux-persist/integration/react';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -13,9 +14,13 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     
     <Provider store={store}>
       <ThemeProvider theme={{}}>
+        
         <BrowserRouter basename="/goit-react-hw-08-phonebook">
+          <PersistGate loading={null} persistor={persistor}>
           <App />
+           </PersistGate>
           </BrowserRouter>
+         
       <GlobalStyle/>
       </ThemeProvider>
       </Provider>

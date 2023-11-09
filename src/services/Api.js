@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const contactsInstance = axios.create({
-    baseURL: 'https://connections-api.herokuapp.com/',
+    baseURL: 'https://connections-api.herokuapp.com',
 });
 
 export const setToken = token => {
@@ -23,8 +23,24 @@ export const requestDeleteContacts = async (contactId) => {
     return data;
 };
 
-export const requestRegister = async (formData) => {
-    const { data } = await contactsInstance.post('user/signup', formData);
+export const requestRegister = async formData => {
+    const { data } = await contactsInstance.post('/users/signup', formData);
     setToken(data.token);
     return data;
-}
+};
+
+export const requestLogin = async formData => {
+  const { data } = await contactsInstance.post('/users/login', formData);
+  setToken(data.token);
+  return data;
+};
+
+export const requestRefreshUser = async () => {
+  const { data } = await contactsInstance.get('/users/current');
+  return data;
+};
+
+export const requestLogout = async () => {
+  const { data } = await contactsInstance.post('/users/logout');
+  return data;
+};

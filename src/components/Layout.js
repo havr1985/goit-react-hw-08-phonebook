@@ -6,16 +6,16 @@ import { Outlet } from "react-router-dom";
 
 export const Layout = () => {
     return (
-        <>
+       <div>
             <header>
                 <AuthNav/>
             </header>
-            <div>
+            
                 <Suspense fallback={<Loader/>}>
                     <Outlet/>
                 </Suspense>
             </div>
-        </>
+       
     )
 
 }
