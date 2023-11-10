@@ -24,20 +24,20 @@ export const App = () => {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
-        <Route path='/register' element={
-          <RestictedRoute>
-            <RegisterPage />
-          </RestictedRoute>} />
-        <Route path='/login' element={
-          <RestictedRoute>
-            <LoginPage />
-          </RestictedRoute>} />
-        <Route path='/contacts' element={
-          <PrivateRoute>
-            <ContactsPage />
-          </PrivateRoute>} />
-      </Route>
 
+        <Route path='/register' element={
+          <RestictedRoute redirectTo='/contacts' component={<RegisterPage />} />
+        }/>
+            
+        <Route path='/login' element={
+          <RestictedRoute redirectTo='/contacts' component={<LoginPage />} />
+        }/>
+           
+        <Route path='/contacts' element={
+          <PrivateRoute redirectTo='/login' component={<ContactsPage />} />
+        }/>
+            
+      </Route>
     </Routes>
     
   )

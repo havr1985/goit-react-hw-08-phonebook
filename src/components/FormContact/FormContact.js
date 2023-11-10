@@ -36,7 +36,7 @@ export const FormContact = () => {
             };
                 const newContact = {
                     name: values.name,
-                    phone: values.number
+                    number: values.number
                     }
                     dispatch(addContacts(newContact));
                     actions.resetForm();

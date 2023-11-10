@@ -1,11 +1,11 @@
 import { useSelector } from "react-redux"
 import { selectAuthAuthenticated } from "redux/auth.selector"
-import { AuthNav } from "./AuthNav/AuthNav";
+import { Navigate } from "react-router-dom";
 
 
-export const PrivateRoute = ({ children, redirectTo = '/login' }) => {
+export const PrivateRoute = ({ component: Component, redirectTo = '/' }) => {
     const authenticated = useSelector(selectAuthAuthenticated);
 
-    return authenticated ? children : <AuthNav to={redirectTo} replace/>
+    return authenticated ?  Component : <Navigate to={redirectTo} /> ;
 
 }

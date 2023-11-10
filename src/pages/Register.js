@@ -3,6 +3,8 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { registerThunk } from 'redux/authSlice';
+import { Box, Button, Flex, FormControl, FormErrorMessage, FormLabel, Input, Text, VStack } from '@chakra-ui/react';
+
 
 export default function Register() {
   const dispatch = useDispatch()  
@@ -30,9 +32,14 @@ export default function Register() {
     },
   });
   return (
-    <form onSubmit={formik.handleSubmit}>
-      <label htmlFor="name">Name</label>
-      <input
+    <Flex bg="green.100" align="center" justify="center" h="100vh">
+      <Box bgGradient='linear(to-r, green.200, pink.500)' p={6} rounded="md" w={400} >
+        <Text as='h2' textAlign='center' fontSize={30} fontWeight={700} mb={4} color='white'>SIGN UP</Text>
+        <form onSubmit={formik.handleSubmit}>
+          <VStack spacing={10} align="flex-start">
+            <FormControl isInvalid={formik.touched.name && formik.errors.name}>
+      <FormLabel htmlFor="name">Name</FormLabel>
+              <Input
         id="name"
         name="name"
         type="text"
@@ -40,12 +47,12 @@ export default function Register() {
         onBlur={formik.handleBlur}
         value={formik.values.name}
       />
-      {formik.touched.name && formik.errors.name ? (
-        <div>{formik.errors.name}</div>
-      ) : null}
-
-      <label htmlFor="email">Email Address</label>
-      <input
+        <FormErrorMessage>{formik.errors.name}</FormErrorMessage>
+            </FormControl>
+            
+      <FormControl isInvalid={formik.touched.email && formik.errors.email}>
+      <FormLabel htmlFor="email">Email Address</FormLabel>
+      <Input
         id="email"
         name="email"
         type="email"
@@ -53,12 +60,12 @@ export default function Register() {
         onBlur={formik.handleBlur}
         value={formik.values.email}
       />
-      {formik.touched.email && formik.errors.email ? (
-        <div>{formik.errors.email}</div>
-          ) : null}
-          
-      <label htmlFor="password">Password</label>
-      <input
+        <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
+        </FormControl>
+
+      <FormControl isInvalid={formik.touched.password && formik.errors.password}>    
+      <FormLabel htmlFor="password">Password</FormLabel>
+      <Input
         id="password"
         name="password"
         type="text"
@@ -66,11 +73,13 @@ export default function Register() {
         onBlur={formik.handleBlur}
         value={formik.values.password}
       />
-      {formik.touched.password && formik.errors.password ? (
-        <div>{formik.errors.password}</div>
-      ) : null}
+        <FormErrorMessage>{formik.errors.password}</FormErrorMessage>
+              </FormControl> 
 
-      <button type="submit">Submit</button>
-    </form>
+            <Button type="submit" colorScheme='pink' color='white' width='full' >Register</Button>
+            </VStack>
+        </form>
+        </Box>
+      </Flex>
   );
 };
