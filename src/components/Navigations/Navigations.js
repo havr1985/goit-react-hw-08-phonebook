@@ -11,7 +11,7 @@ export const Navigations = () => {
             <Button as={NavLink} colorScheme='pink' _activeLink={{ bg: "white", color: '#e81c8c' }} to='/'>Home</Button>
             
         {authenticated && (
-        <NavLink to='/contacts'>Contacts</NavLink>)}
+        <Button as={NavLink} colorScheme='pink' _activeLink={{ bg: "white", color: '#e81c8c' }} marginLeft={4} to='/contacts'>Contacts</Button>)}
         </nav>
     )
 } 

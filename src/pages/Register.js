@@ -16,10 +16,10 @@ export default function Register() {
     },
     validationSchema: Yup.object({
       name: Yup.string()
-        .max(15, 'Must be 15 characters or less')
+        .min(3, 'Must be minimum 3 characters or less')
         .required('Required'),
       password: Yup.string()
-        .max(20, 'Must be 20 characters or less')
+        .min(7, 'Must be minimum 7 characters or less')
         .required('Required'),
       email: Yup.string().email('Invalid email address').required('Required'),
     }),
@@ -76,7 +76,7 @@ export default function Register() {
         <FormErrorMessage>{formik.errors.password}</FormErrorMessage>
               </FormControl> 
 
-            <Button type="submit" colorScheme='pink' color='white' width='full' >Register</Button>
+            <Button type="submit" colorScheme='pink' color='white' width='full' >SIGN UP</Button>
             </VStack>
         </form>
         </Box>
