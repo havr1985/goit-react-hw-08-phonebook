@@ -32,7 +32,7 @@ export default function Register() {
     <form onSubmit={formik.handleSubmit}>
           <VStack spacing={10} align="flex-start">
 
-            <FormControl isInvalid={formik.touched.email && formik.errors.email}>
+       <FormControl isInvalid={formik.touched.email && formik.errors.email}>
       <FormLabel htmlFor="email">Email Address</FormLabel>
       <Input
         id="email"
