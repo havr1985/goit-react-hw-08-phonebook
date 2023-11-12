@@ -21,8 +21,9 @@ export const FormContact = () => {
         .matches(/^[a-zA-Z\s]+$/, 'Please, enter only letter')
         .min(3, 'Too short!')
         .required('This field is required!'),
-     number: Yup.string()
-        .matches(/^\d{3}-\d{3}-\d{2}-\d{2}$/, 'Format: 066-123-45-67')
+        number: Yup.string()
+         .min(5, 'Too short!')
+        .matches(/^[0-9\-+']+$/, 'Only numbers and -')
         .required('This field is required!'),
     }),
             onSubmit: (values, actions) => {
@@ -65,14 +66,14 @@ export const FormContact = () => {
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
                                 value={formik.values.number}
-                                placeholder="Enter number format: 066-123-45-67" />
+                                placeholder="Enter number" />
                             <FormErrorMessage>{formik.errors.number}</FormErrorMessage> 
                         
                     </FormControl> 
                     <Button type="submit" colorScheme='pink' color='white'>Add contact</Button>
-            </VStack>
-                </form>
-                </Box>
+                </VStack>
+            </form>
+             </Box>
         </Flex>
     )
 }

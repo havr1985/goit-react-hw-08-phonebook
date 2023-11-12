@@ -38,48 +38,48 @@ export default function Register() {
         <form onSubmit={formik.handleSubmit}>
           <VStack spacing={10} align="flex-start">
             <FormControl isInvalid={formik.touched.name && formik.errors.name}>
-      <FormLabel htmlFor="name">Name</FormLabel>
+            <FormLabel htmlFor="name">Name</FormLabel>
               <Input
-        id="name"
-        name="name"
-        type="text"
-        onChange={formik.handleChange}
-        onBlur={formik.handleBlur}
-        value={formik.values.name}
-      />
-        <FormErrorMessage>{formik.errors.name}</FormErrorMessage>
+                id="name"
+                name="name"
+                type="text"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.name}
+              />
+            <FormErrorMessage>{formik.errors.name}</FormErrorMessage>
             </FormControl>
             
-      <FormControl isInvalid={formik.touched.email && formik.errors.email}>
-      <FormLabel htmlFor="email">Email Address</FormLabel>
-      <Input
-        id="email"
-        name="email"
-        type="email"
-        onChange={formik.handleChange}
-        onBlur={formik.handleBlur}
-        value={formik.values.email}
-      />
-        <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
-        </FormControl>
+            <FormControl isInvalid={formik.touched.email && formik.errors.email}>
+            <FormLabel htmlFor="email">Email Address</FormLabel>
+              <Input
+                id="email"
+                name="email"
+                type="email"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.email}
+              />
+            <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
+            </FormControl>
 
-      <FormControl isInvalid={formik.touched.password && formik.errors.password}>    
-      <FormLabel htmlFor="password">Password</FormLabel>
-      <Input
-        id="password"
-        name="password"
-        type="text"
-        onChange={formik.handleChange}
-        onBlur={formik.handleBlur}
-        value={formik.values.password}
-      />
-        <FormErrorMessage>{formik.errors.password}</FormErrorMessage>
-              </FormControl> 
+            <FormControl isInvalid={formik.touched.password && formik.errors.password}>    
+            <FormLabel htmlFor="password">Password</FormLabel>
+              <Input
+                id="password"
+                name="password"
+                type="text"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.password}
+              />
+            <FormErrorMessage>{formik.errors.password}</FormErrorMessage>
+            </FormControl> 
 
             <Button type="submit" colorScheme='pink' color='white' width='full' >SIGN UP</Button>
-            </VStack>
+          </VStack>
         </form>
-        </Box>
-      </Flex>
+      </Box>
+    </Flex>
   );
 };

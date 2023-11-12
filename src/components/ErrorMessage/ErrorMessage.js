@@ -1,7 +1,8 @@
-import { ErrMsg } from "./ErrorMessage.styled"
+import { Text } from "@chakra-ui/react"
+
 
 export const ErrorMsg = () => {
     return (
-        <ErrMsg>Whoops! Error! Please reload this page!</ErrMsg>
+        <Text color='red' fontWeight='700'>Whoops! Error! Please reload this page!</Text>
     )
 }

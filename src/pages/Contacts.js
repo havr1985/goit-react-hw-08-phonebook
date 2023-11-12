@@ -28,19 +28,19 @@ export default function Contacts() {
           Add contact
         </Text>
         <FormContact />
-      <Text as='h1'
+        <Text as='h1'
         fontSize={40}
         fontWeight={900} textAlign='center'
         fontFamily='cursive'
         color='#e81c8c'
         mb={7}
         pt={7}>Contact List</Text>
-      <SearchFilter />
-      <ContactList />
-      <Toaster
-      position="top-right"
-      reverseOrder={false}/>
-    </Box>
+        <SearchFilter />
+        <ContactList />
+        <Toaster
+          position="top-right"
+          reverseOrder={false}/>
+      </Box>
     )
 
 };

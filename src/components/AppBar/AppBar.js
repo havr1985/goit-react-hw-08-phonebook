@@ -11,7 +11,7 @@ export const AppBar = () => {
     return (
         <Box as="header" bg='#0db59f'>
             <Container maxW='1280px'>
-            <Flex p={7}  justifyContent="space-between" alignItems='center'>
+                <Flex p={7}  justifyContent="space-between" alignItems='center'>
                     <Navigations />
                     <Text bgGradient='linear(to-l, #7928CA, #FF0080)'
                           bgClip='text'
@@ -19,7 +19,7 @@ export const AppBar = () => {
                         fontWeight='extrabold'>Phonebook</Text>
                 {authenticated ? <UserMenu /> : <AuthNav />}
                 </Flex>
-                </Container>
+            </Container>
         </Box>
     )
 };
