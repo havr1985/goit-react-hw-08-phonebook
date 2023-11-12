@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from "react-redux";
-import { SearchInput, InputContainer } from "./SearchFilter.styled";
 import { ChangeFilter } from "redux/filterSlice";
 import { Box, Input } from "@chakra-ui/react";
 

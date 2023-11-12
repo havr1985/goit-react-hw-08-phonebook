@@ -1,6 +1,5 @@
 import { ContactListItem } from "components/ContactListItem/ContactListItem";
 import { useSelector } from "react-redux";
-import { List } from "./ContactList.styled";
 import { selectVisibleContacts, selectIsLoading, selectError } from "redux/contacts.selector";
 import { Loader } from "components/Loader";
 import { ErrorMsg } from "components/ErrorMessage/ErrorMessage";
