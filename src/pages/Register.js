@@ -24,13 +24,11 @@ export default function Register() {
       email: Yup.string().email('Invalid email address').required('Required'),
     }),
     onSubmit: (values, actions) => {
-        console.log(values);
         dispatch(registerThunk(values));
-
         actions.resetForm()
-        
     },
   });
+  
   return (
     <Flex bg="green.100" align="center" justify="center" h="100vh">
       <Box bgGradient='linear(to-r, green.200, pink.500)' p={6} rounded="md" w={400} >

@@ -4,11 +4,8 @@ import { requestRegister, setToken, requestLogin, requestRefreshUser, requestLog
 export const registerThunk = createAsyncThunk(
   'auth/register',
   async (formData, thunkAPI) => {
-    console.log(formData)
     try {
       const authData = await requestRegister(formData);
-      console.log(authData)
-
       return authData;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -21,8 +18,6 @@ export const loginThunk = createAsyncThunk(
   async (formData, thunkAPI) => {
     try {
       const response = await requestLogin(formData);
-      console.log(response)
-
       return response;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
